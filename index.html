@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Makes MOODY KEY work properly on phones -->
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="MOODY KEY - A custom keyboard with unique black emojis."
+    >
+
+    <title>MOODY KEY</title>
+
+    <!-- Our CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+    <!-- =========================================
+         MOODY KEY APP
+    ========================================== -->
+
+    <main class="moody-key-app">
+
+
+        <!-- =====================================
+             HEADER / BRAND
+        ====================================== -->
+
+        <header class="moody-header">
+
+            <div class="moody-logo">
+                M
+            </div>
+
+            <div class="moody-brand">
+
+                <h1>
+                    MOODY KEY
+                </h1>
+
+                <p>
+                    Black Emoji Keyboard
+                </p>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =====================================
+             MESSAGE / TEXT AREA
+        ====================================== -->
+
+        <section class="message-area">
+
+            <div
+                id="messageInput"
+                class="message-input"
+                contenteditable="true"
+                role="textbox"
+                aria-label="MOODY KEY text input"
+                data-placeholder="Message"
+            ></div>
+
+
+            <button
+                id="sendButton"
+                class="send-button"
+                type="button"
+                aria-label="Send"
+            >
+                ➤
+            </button>
+
+        </section>
+
+
+
+        <!-- =====================================
+             MOODY EMOJI PANEL
+        ====================================== -->
+
+        <section
+            id="emojiPanel"
+            class="emoji-panel"
+            aria-label="MOODY Emoji Library"
+        >
+
+            <div class="emoji-panel-header">
+
+                <div>
+
+                    <h2>
+                        MOODY EMOJIS
+                    </h2>
+
+                    <p>
+                        Original Moody Key collection
+                    </p>
+
+                </div>
+
+
+                <button
+                    id="closeEmoji"
+                    type="button"
+                    aria-label="Close emoji panel"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <!--
+
+                Our three emoji sheets will be
+                loaded here by script.js:
+
+                assets/moody-emojis-1.jpg
+                assets/moody-emojis-2.jpg
+                assets/moody-emojis-3.jpg
+
+            -->
+
+            <div
+                id="emojiGrid"
+                class="emoji-grid"
+            ></div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             KEYBOARD
+        ====================================== -->
+
+        <section
+            class="keyboard"
+            aria-label="MOODY KEY keyboard"
+        >
+
+
+            <!-- =================================
+                 KEYBOARD TOP BAR
+            ================================== -->
+
+            <div class="keyboard-top">
+
+                <!-- Emoji button -->
+
+                <button
+                    id="emojiButton"
+                    class="keyboard-icon-button"
+                    type="button"
+                    aria-label="Open MOODY emojis"
+                >
+                    😊
+                </button>
+
+
+                <!-- Keyboard name -->
+
+                <div class="keyboard-title">
+                    MOODY KEY
+                </div>
+
+
+                <!-- Microphone -->
+
+                <button
+                    id="microphoneButton"
+                    class="keyboard-icon-button microphone-button"
+                    type="button"
+                    aria-label="Microphone"
+                >
+                    🎙
+                </button>
+
+            </div>
+
+
+
+            <!-- =================================
+                 LETTER KEYBOARD
+            ================================== -->
+
+            <div
+                id="lettersKeyboard"
+                class="letters-keyboard"
+            >
+
+
+                <!-- =============================
+                     QWERTY ROW
+                ============================== -->
+
+                <div class="key-row">
+
+                    <button class="key letter-key">
+                        Q
+                    </button>
+
+                    <button class="key letter-key">
+                        W
+                    </button>
+
+                    <button class="key letter-key">
+                        E
+                    </button>
+
+                    <button class="key letter-key">
+                        R
+                    </button>
+
+                    <button class="key letter-key">
+                        T
+                    </button>
+
+                    <button class="key letter-key">
+                        Y
+                    </button>
+
+                    <button class="key letter-key">
+                        U
+                    </button>
+
+                    <button class="key letter-key">
+                        I
+                    </button>
+
+                    <button class="key letter-key">
+                        O
+                    </button>
+
+                    <button class="key letter-key">
+                        P
+                    </button>
+
+                </div>
+
+
+
+                <!-- =============================
+                     ASDF ROW
+                ============================== -->
+
+                <div class="key-row middle-row">
+
+                    <button class="key letter-key">
+                        A
+                    </button>
+
+                    <button class="key letter-key">
+                        S
+                    </button>
+
+                    <button class="key letter-key">
+                        D
+                    </button>
+
+                    <button class="key letter-key">
+                        F
+                    </button>
+
+                    <button class="key letter-key">
+                        G
+                    </button>
+
+                    <button class="key letter-key">
+                        H
+                    </button>
+
+                    <button class="key letter-key">
+                        J
+                    </button>
+
+                    <button class="key letter-key">
+                        K
+                    </button>
+
+                    <button class="key letter-key">
+                        L
+                    </button>
+
+                </div>
+
+
+
+                <!-- =============================
+                     ZXCV ROW
+                ============================== -->
+
+                <div class="key-row">
+
+                    <button
+                        id="shiftButton"
+                        class="key special-key shift-key"
+                        type="button"
+                        aria-label="Shift"
+                    >
+                        ⇧
+                    </button>
+
+
+                    <button class="key letter-key">
+                        Z
+                    </button>
+
+                    <button class="key letter-key">
+                        X
+                    </button>
+
+                    <button class="key letter-key">
+                        C
+                    </button>
+
+                    <button class="key letter-key">
+                        V
+                    </button>
+
+                    <button class="key letter-key">
+                        B
+                    </button>
+
+                    <button class="key letter-key">
+                        N
+                    </button>
+
+                    <button class="key letter-key">
+                        M
+                    </button>
+
+
+                    <button
+                        id="backspaceButton"
+                        class="key special-key backspace-key"
+                        type="button"
+                        aria-label="Backspace"
+                    >
+                        ⌫
+                    </button>
+
+                </div>
+
+
+
+                <!-- =================================
+                     BOTTOM KEYBOARD ROW
+                ================================== -->
+
+                <div class="bottom-key-row">
+
+
+                    <!-- Numbers -->
+
+                    <button
+                        id="numbersButton"
+                        class="bottom-key numbers-button"
+                        type="button"
+                    >
+                        ?123
+                    </button>
+
+
+                    <!-- Comma -->
+
+                    <button
+                        id="commaButton"
+                        class="bottom-key small-symbol-key"
+                        type="button"
+                    >
+                        ,
+                    </button>
+
+
+                    <!-- Small emoji -->
+
+                    <button
+                        id="smallEmojiButton"
+                        class="bottom-key emoji-key"
+                        type="button"
+                    >
+                        😊
+                    </button>
+
+
+                    <!-- Space -->
+
+                    <button
+                        id="spaceButton"
+                        class="space-key"
+                        type="button"
+                        aria-label="Space"
+                    >
+                    </button>
+
+
+                    <!-- Period -->
+
+                    <button
+                        id="periodButton"
+                        class="bottom-key small-symbol-key"
+                        type="button"
+                    >
+                        .
+                    </button>
+
+
+                    <!-- Enter -->
+
+                    <button
+                        id="enterButton"
+                        class="enter-key"
+                        type="button"
+                        aria-label="Enter"
+                    >
+                        ↵
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================
+                 NUMBERS / SYMBOLS KEYBOARD
+            ================================== -->
+
+            <div
+                id="numbersKeyboard"
+                class="numbers-keyboard hidden"
+            >
+
+
+                <!-- Numbers row -->
+
+                <div class="key-row">
+
+                    <button class="key number-key">1</button>
+                    <button class="key number-key">2</button>
+                    <button class="key number-key">3</button>
+                    <button class="key number-key">4</button>
+                    <button class="key number-key">5</button>
+                    <button class="key number-key">6</button>
+                    <button class="key number-key">7</button>
+                    <button class="key number-key">8</button>
+                    <button class="key number-key">9</button>
+                    <button class="key number-key">0</button>
+
+                </div>
+
+
+
+                <!-- Symbols -->
+
+                <div class="key-row middle-row">
+
+                    <button class="key symbol-key">@</button>
+                    <button class="key symbol-key">#</button>
+                    <button class="key symbol-key">$</button>
+                    <button class="key symbol-key">%</button>
+                    <button class="key symbol-key">&</button>
+                    <button class="key symbol-key">*</button>
+                    <button class="key symbol-key">(</button>
+                    <button class="key symbol-key">)</button>
+                    <button class="key symbol-key">!</button>
+
+                </div>
+
+
+
+                <!-- More symbols -->
+
+                <div class="key-row">
+
+                    <button
+                        id="lettersButton"
+                        class="key special-key"
+                        type="button"
+                    >
+                        ABC
+                    </button>
+
+                    <button class="key symbol-key">
+                        -
+                    </button>
+
+                    <button class="key symbol-key">
+                        _
+                    </button>
+
+                    <button class="key symbol-key">
+                        +
+                    </button>
+
+                    <button class="key symbol-key">
+                        =
+                    </button>
+
+                    <button class="key symbol-key">
+                        /
+                    </button>
+
+                    <button class="key symbol-key">
+                        ?
+                    </button>
+
+                    <button
+                        id="numberBackspaceButton"
+                        class="key special-key"
+                        type="button"
+                    >
+                        ⌫
+                    </button>
+
+                </div>
+
+
+
+                <!-- Numbers bottom row -->
+
+                <div class="bottom-key-row">
+
+                    <button
+                        id="lettersButtonBottom"
+                        class="bottom-key numbers-button"
+                        type="button"
+                    >
+                        ABC
+                    </button>
+
+
+                    <button
+                        class="bottom-key small-symbol-key"
+                    >
+                        ,
+                    </button>
+
+
+                    <button
+                        id="numberEmojiButton"
+                        class="bottom-key emoji-key"
+                        type="button"
+                    >
+                        😊
+                    </button>
+
+
+                    <button
+                        id="numberSpaceButton"
+                        class="space-key"
+                        type="button"
+                    >
+                    </button>
+
+
+                    <button
+                        class="bottom-key small-symbol-key"
+                    >
+                        .
+                    </button>
+
+
+                    <button
+                        id="numberEnterButton"
+                        class="enter-key"
+                        type="button"
+                    >
+                        ↵
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
