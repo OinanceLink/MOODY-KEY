@@ -1,0 +1,1012 @@
+/* =========================================
+   MOODY KEY
+   Main Keyboard Design
+========================================= */
+
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =========================================
+   BODY
+========================================= */
+
+body {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            #24282c 0%,
+            #111416 35%,
+            #050607 75%,
+            #000000 100%
+        );
+
+    color: #ffffff;
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   MAIN APP
+========================================= */
+
+.moody-key-app {
+    width: 100%;
+    max-width: 950px;
+
+    min-height: 100vh;
+
+    margin: 0 auto;
+
+    padding:
+        20px
+        20px
+        12px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.moody-header {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    margin-bottom: 20px;
+}
+
+
+.moody-logo {
+    width: 48px;
+    height: 48px;
+
+    border-radius: 15px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #9da3a8
+        );
+
+    color: #111111;
+
+    font-size: 25px;
+
+    font-weight: 900;
+
+    box-shadow:
+        inset 2px 2px 5px rgba(255,255,255,0.9),
+        inset -3px -3px 6px rgba(0,0,0,0.5),
+        0 4px 12px rgba(0,0,0,0.5);
+}
+
+
+.moody-brand h1 {
+    font-size: 22px;
+
+    letter-spacing: 4px;
+
+    font-weight: 800;
+}
+
+
+.moody-brand p {
+    margin-top: 3px;
+
+    color: #858b91;
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================
+   MESSAGE AREA
+========================================= */
+
+.message-area {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 12px;
+}
+
+
+.message-input {
+    flex: 1;
+
+    min-height: 70px;
+
+    padding: 16px 20px;
+
+    border-radius: 25px;
+
+    border: 1px solid #3e4449;
+
+    outline: none;
+
+    background:
+        linear-gradient(
+            145deg,
+            #202428,
+            #111315
+        );
+
+    color: #ffffff;
+
+    font-size: 20px;
+
+    line-height: 1.4;
+
+    box-shadow:
+        inset 0 3px 10px rgba(0,0,0,0.65),
+        0 3px 10px rgba(0,0,0,0.4);
+}
+
+
+/* Placeholder */
+
+.message-input:empty::before {
+    content: attr(data-placeholder);
+
+    color: #777d82;
+
+    pointer-events: none;
+}
+
+
+.send-button {
+    width: 58px;
+    height: 58px;
+
+    flex-shrink: 0;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #b9bdc0
+        );
+
+    color: #111111;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    box-shadow:
+        inset 2px 2px 5px rgba(255,255,255,0.9),
+        inset -3px -3px 5px rgba(0,0,0,0.35),
+        0 4px 10px rgba(0,0,0,0.5);
+
+    transition:
+        transform 0.1s ease;
+}
+
+
+.send-button:active {
+    transform: scale(0.92);
+}
+
+
+/* =========================================
+   KEYBOARD
+========================================= */
+
+.keyboard {
+    width: 100%;
+
+    padding: 13px;
+
+    border-radius:
+        34px
+        34px
+        22px
+        22px;
+
+    background:
+        linear-gradient(
+            160deg,
+            #111417,
+            #070809
+        );
+
+    border:
+        1px solid rgba(255,255,255,0.05);
+
+    box-shadow:
+        0 -8px 35px rgba(0,0,0,0.65),
+        inset 0 1px 0 rgba(255,255,255,0.06);
+}
+
+
+/* =========================================
+   TOP BAR
+========================================= */
+
+.keyboard-top {
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding:
+        0
+        7px
+        8px;
+}
+
+
+.keyboard-title {
+    color: #70767b;
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    font-weight: 700;
+}
+
+
+.keyboard-icon-button {
+    width: 43px;
+    height: 43px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #656b70,
+            #34393d
+        );
+
+    color: #ffffff;
+
+    font-size: 19px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    box-shadow:
+        inset 2px 2px 4px rgba(255,255,255,0.25),
+        inset -3px -3px 5px rgba(0,0,0,0.6),
+        0 2px 4px #000;
+
+    transition:
+        transform 0.08s ease;
+}
+
+
+.keyboard-icon-button:active {
+    transform:
+        translateY(2px)
+        scale(0.95);
+}
+
+
+/* =========================================
+   KEYBOARD ROW
+========================================= */
+
+.key-row {
+    width: 100%;
+
+    display: flex;
+
+    gap: 7px;
+
+    margin-bottom: 8px;
+}
+
+
+.middle-row {
+    padding-left: 4%;
+
+    padding-right: 4%;
+}
+
+
+/* =========================================
+   NORMAL KEYS
+========================================= */
+
+.key {
+    flex: 1;
+
+    min-width: 0;
+
+    height: 61px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #858b91 0%,
+            #676d72 45%,
+            #4c5257 100%
+        );
+
+    color: #ffffff;
+
+    font-size: 25px;
+
+    font-weight: 400;
+
+    cursor: pointer;
+
+    box-shadow:
+        inset 2px 2px 4px rgba(255,255,255,0.35),
+        inset -3px -4px 6px rgba(0,0,0,0.48),
+        0 2px 3px rgba(0,0,0,0.8);
+
+    transition:
+        transform 0.07s ease,
+        filter 0.07s ease;
+}
+
+
+.key:hover {
+    filter: brightness(1.08);
+}
+
+
+.key:active {
+    transform:
+        translateY(3px)
+        scale(0.97);
+
+    box-shadow:
+        inset 3px 3px 7px rgba(0,0,0,0.5),
+        0 1px 1px #000;
+}
+
+
+/* =========================================
+   SPECIAL KEYS
+========================================= */
+
+.special-key {
+    flex: 1.25;
+
+    font-size: 25px;
+}
+
+
+.shift-key {
+    font-size: 28px;
+}
+
+
+.backspace-key {
+    font-size: 25px;
+}
+
+
+/* =========================================
+   BOTTOM ROW
+========================================= */
+
+.bottom-key-row {
+    width: 100%;
+
+    display: flex;
+
+    gap: 7px;
+
+    margin-top: 2px;
+}
+
+
+.bottom-key {
+    width: 72px;
+
+    height: 61px;
+
+    flex-shrink: 0;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #777d82,
+            #51575c
+        );
+
+    color: #ffffff;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    box-shadow:
+        inset 2px 2px 4px rgba(255,255,255,0.28),
+        inset -3px -4px 6px rgba(0,0,0,0.5),
+        0 2px 3px #000;
+
+    transition:
+        transform 0.07s ease;
+}
+
+
+.bottom-key:active {
+    transform:
+        translateY(3px)
+        scale(0.97);
+}
+
+
+.small-symbol-key {
+    font-size: 25px;
+}
+
+
+.emoji-key {
+    font-size: 21px;
+}
+
+
+/* =========================================
+   SPACE BAR
+========================================= */
+
+.space-key {
+    flex: 1;
+
+    min-width: 80px;
+
+    height: 61px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #777d82,
+            #50565b
+        );
+
+    cursor: pointer;
+
+    box-shadow:
+        inset 2px 2px 4px rgba(255,255,255,0.28),
+        inset -3px -4px 6px rgba(0,0,0,0.5),
+        0 2px 3px #000;
+
+    transition:
+        transform 0.07s ease;
+}
+
+
+.space-key:active {
+    transform:
+        translateY(3px)
+        scale(0.98);
+}
+
+
+/* =========================================
+   ENTER
+========================================= */
+
+.enter-key {
+    width: 82px;
+
+    height: 61px;
+
+    flex-shrink: 0;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #3498ff,
+            #1264c4
+        );
+
+    color: #ffffff;
+
+    font-size: 30px;
+
+    cursor: pointer;
+
+    box-shadow:
+        inset 2px 2px 5px rgba(255,255,255,0.4),
+        inset -3px -4px 6px rgba(0,0,0,0.45),
+        0 2px 4px #000;
+
+    transition:
+        transform 0.07s ease;
+}
+
+
+.enter-key:active {
+    transform:
+        translateY(3px)
+        scale(0.97);
+}
+
+
+/* =========================================
+   NUMBERS KEYBOARD
+========================================= */
+
+.hidden {
+    display: none !important;
+}
+
+
+.numbers-keyboard {
+    width: 100%;
+}
+
+
+/* =========================================
+   EMOJI PANEL
+========================================= */
+
+.emoji-panel {
+    display: none;
+
+    position: fixed;
+
+    z-index: 1000;
+
+    left: 50%;
+
+    bottom: 15px;
+
+    transform: translateX(-50%);
+
+    width: min(900px, 94vw);
+
+    max-height: 75vh;
+
+    padding: 18px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #17191b,
+            #070809
+        );
+
+    border: 1px solid #303438;
+
+    box-shadow:
+        0 20px 80px rgba(0,0,0,0.9),
+        inset 0 1px 0 rgba(255,255,255,0.06);
+
+    overflow: hidden;
+}
+
+
+.emoji-panel.active {
+    display: block;
+}
+
+
+.emoji-panel-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 15px;
+}
+
+
+.emoji-panel-header h2 {
+    font-size: 15px;
+
+    letter-spacing: 3px;
+}
+
+
+.emoji-panel-header p {
+    margin-top: 4px;
+
+    color: #777d82;
+
+    font-size: 11px;
+}
+
+
+.emoji-panel-header button {
+    width: 38px;
+    height: 38px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #353a3f;
+
+    color: white;
+
+    font-size: 24px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   EMOJI GRID
+========================================= */
+
+.emoji-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 10px;
+
+    max-height: 58vh;
+
+    overflow-y: auto;
+
+    padding: 5px;
+}
+
+
+.emoji-item {
+    position: relative;
+
+    aspect-ratio: 1;
+
+    border-radius: 16px;
+
+    background: #000000;
+
+    border: 1px solid #272a2d;
+
+    cursor: pointer;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.1s ease,
+        border-color 0.1s ease;
+}
+
+
+.emoji-item:hover {
+    border-color: #666;
+
+    transform: scale(1.03);
+}
+
+
+.emoji-item:active {
+    transform: scale(0.94);
+}
+
+
+.emoji-item img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+}
+
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+.emoji-grid::-webkit-scrollbar {
+    width: 5px;
+}
+
+
+.emoji-grid::-webkit-scrollbar-track {
+    background: #090a0b;
+}
+
+
+.emoji-grid::-webkit-scrollbar-thumb {
+    background: #4b5055;
+
+    border-radius: 10px;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .moody-key-app {
+        min-height: 100dvh;
+
+        padding:
+            10px
+            7px
+            7px;
+    }
+
+
+    .moody-header {
+        margin-bottom: 8px;
+    }
+
+
+    .moody-logo {
+        width: 40px;
+        height: 40px;
+
+        border-radius: 12px;
+
+        font-size: 21px;
+    }
+
+
+    .moody-brand h1 {
+        font-size: 17px;
+
+        letter-spacing: 3px;
+    }
+
+
+    .moody-brand p {
+        font-size: 9px;
+    }
+
+
+    .message-area {
+        margin-bottom: 7px;
+    }
+
+
+    .message-input {
+        min-height: 55px;
+
+        border-radius: 20px;
+
+        padding:
+            12px
+            15px;
+
+        font-size: 17px;
+    }
+
+
+    .send-button {
+        width: 50px;
+        height: 50px;
+
+        font-size: 21px;
+    }
+
+
+    .keyboard {
+        padding: 7px;
+
+        border-radius:
+            24px
+            24px
+            12px
+            12px;
+    }
+
+
+    .keyboard-top {
+        height: 40px;
+
+        padding-bottom: 6px;
+    }
+
+
+    .keyboard-icon-button {
+        width: 34px;
+        height: 34px;
+
+        font-size: 16px;
+    }
+
+
+    .keyboard-title {
+        font-size: 9px;
+
+        letter-spacing: 3px;
+    }
+
+
+    .key-row {
+        gap: 4px;
+
+        margin-bottom: 5px;
+    }
+
+
+    .middle-row {
+        padding-left: 3%;
+
+        padding-right: 3%;
+    }
+
+
+    .key {
+        height: 53px;
+
+        border-radius: 9px;
+
+        font-size: 21px;
+    }
+
+
+    .special-key {
+        font-size: 21px;
+    }
+
+
+    .shift-key {
+        font-size: 24px;
+    }
+
+
+    .bottom-key-row {
+        gap: 4px;
+    }
+
+
+    .bottom-key {
+        width: 52px;
+
+        height: 53px;
+
+        border-radius: 9px;
+
+        font-size: 14px;
+    }
+
+
+    .small-symbol-key {
+        font-size: 21px;
+    }
+
+
+    .emoji-key {
+        font-size: 17px;
+    }
+
+
+    .space-key {
+        height: 53px;
+
+        min-width: 45px;
+
+        border-radius: 9px;
+    }
+
+
+    .enter-key {
+        width: 60px;
+
+        height: 53px;
+
+        border-radius: 9px;
+
+        font-size: 25px;
+    }
+
+
+    .emoji-panel {
+        bottom: 7px;
+
+        width: 96vw;
+
+        border-radius: 22px;
+
+        padding: 12px;
+    }
+
+
+    .emoji-grid {
+        gap: 7px;
+    }
+
+}
+
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media (max-width: 390px) {
+
+    .key {
+        height: 49px;
+
+        font-size: 19px;
+    }
+
+
+    .bottom-key,
+    .space-key,
+    .enter-key {
+        height: 49px;
+    }
+
+
+    .bottom-key {
+        width: 46px;
+    }
+
+
+    .enter-key {
+        width: 53px;
+    }
+
+}
